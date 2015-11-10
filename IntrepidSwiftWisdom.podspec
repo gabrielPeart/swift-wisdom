@@ -20,8 +20,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec "Testing" do |ts|
-    ts.dependency "IntrepidSwiftWisdom/Core"
-    ts.source_files = "testing/**/*.swift"
+    ts.source_files = "src/**/*.swift", "testing/**/*.swift"
     ts.frameworks    = "XCTest"
   end
 end
