@@ -5,13 +5,23 @@ Pod::Spec.new do |s|
   s.description   = <<-DESC
                     A collection of extensions to the Swift Standard Library, written by the developers of Intrepid Pursuits.
                     DESC
-  s.weak_framework    = "XCTest"
   s.homepage      = "https://github.com/IntrepidPursuits/swift-wisdom"
   s.license       = "MIT"
   s.authors       = { "Logan Wright" => "logan@intrepid.io" }
   s.source        = { :git => "https://github.com/IntrepidPursuits/swift-wisdom.git", :tag => "0.0.6" }
-  s.source_files  = "src/**/*.swift"
   s.exclude_files = "tests/**/*"
   s.platform      = :ios
   s.ios.deployment_target = "8.0"
+
+  s.default_subspec = "Core"
+
+  s.subspec "Core" do |cs|
+    cs.source_files  = "src/**/*.swift"
+  end
+
+  s.subspec "Testing" do |ts|
+    ts.dependency "IntrepidSwiftWisdom/Core"
+    ts.source_files = "testing/**/*.swift"
+    ts.frameworks    = "XCTest"
+  end
 end
