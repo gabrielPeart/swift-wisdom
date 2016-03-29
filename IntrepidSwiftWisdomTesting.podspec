@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.exclude_files = "tests/**/*"
   s.platform      = :ios
   s.ios.deployment_target = "8.0"
-  s.source_files  = "SwiftWisdom/SwiftWisdomTests/Testing/**/*.swift"
+  s.source_files  = "SwiftWisdomTests/Testing/**/*.swift"
   s.frameworks    = "XCTest"
 end
