@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-public func ip_XCTAssertEqualOptional<T: Any where T: Equatable>(@autoclosure expression1: () -> T?, @autoclosure expression2: () -> T?, _ message: String? = nil, file: String = __FILE__, line: UInt = __LINE__) {
+public func ip_XCTAssertEqualOptional<T: Any where T: Equatable>(@autoclosure expression1: () -> T?, @autoclosure expression2: () -> T?, _ message: String? = nil, file: StaticString = #file, line: UInt = #line) {
     let exp1 = expression1()
     let exp2 = expression2()
     switch (exp1, exp2) {
@@ -15,7 +15,7 @@ public func ip_XCTAssertEqualOptional<T: Any where T: Equatable>(@autoclosure ex
     }
 }
 
-public func ip_XCTAssertEqualWithAccuracyOptional<T : FloatingPointType>(@autoclosure expression1: () -> T?, @autoclosure _ expression2: () -> T?, accuracy: T, _ message: String? = nil, file: String = __FILE__, line: UInt = __LINE__) {
+public func ip_XCTAssertEqualWithAccuracyOptional<T : FloatingPointType>(@autoclosure expression1: () -> T?, @autoclosure _ expression2: () -> T?, accuracy: T, _ message: String? = nil, file: StaticString = #file, line: UInt = #line) {
     let exp1 = expression1()
     let exp2 = expression2()
     switch (exp1, exp2) {
